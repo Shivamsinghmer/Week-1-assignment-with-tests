@@ -4,5 +4,15 @@
  */
 
 function sleep (seconds) {
-
+    return new Promise((resolve) => {
+        const start = Date.now();
+        while (Date.now() - start < seconds * 1000) {
+            // wait
+        }
+        resolve();
+    });
 }
+
+sleep(2).then(() => {
+    console.log("Slept for 2 seconds");
+})
